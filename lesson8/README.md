@@ -9,6 +9,36 @@
 - [`hash_demo.py`](./hash_demo.py) — хешування пароля через `bcrypt`
 - [`argon_demo.py`](./argon_demo.py) — хешування пароля через `argon2id`
 
+## Встановлення залежностей
+
+Для прикладів на Python знадобляться бібліотеки `bcrypt`, `argon2-cffi` та
+`cryptography`. Бажано ставити їх у віртуальне середовище, а не глобально:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate       # Windows: venv\Scripts\activate
+```
+
+Встановлення конкретно `bcrypt` та `argon2-cffi` (пакет `argon2-cffi` дає
+модуль `argon2`, який імпортується в `argon_demo.py`):
+
+```bash
+pip install bcrypt
+pip install argon2-cffi
+```
+
+Або одним рядком разом із `cryptography` (потрібна для AES-GCM у розділі 10.3):
+
+```bash
+pip install bcrypt argon2-cffi cryptography
+```
+
+Перевірити, що все встановилось:
+
+```bash
+python3 -c "import bcrypt, argon2; print('OK')"
+```
+
 ## Практична демонстрація: OpenSSL
 
 ⏱ **Таймінг:** 20 хвилин живого демо. Ідеально — hands-on: студенти повторюють
