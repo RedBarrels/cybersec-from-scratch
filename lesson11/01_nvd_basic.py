@@ -33,6 +33,7 @@ NVD (National Vulnerability Database) — це база даних вразли�
 import os
 import sys
 import time
+from dotenv import load_dotenv
 
 import requests
 
@@ -70,6 +71,7 @@ def get_api_key() -> str | None:
     """
     # os.environ — це словник з усіма змінними середовища.
     # .get() повертає None, якщо ключа немає (на відміну від [], який впаде з помилкою).
+    load_dotenv()
     return os.environ.get("NVD_API_KEY")
 
 
